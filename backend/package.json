@@ -1,10 +1,14 @@
 {
-  "name": "system-restilized",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "system-restilized-backend",
+  "version": "0.0.1",
+  "main": "src/loader.js",
   "repository": "https://github.com/mrsvmoraes/system-restilized.git",
   "author": "Vinicius MRS <vinicius@mrseditorial.cloud>",
   "license": "MIT",
+  "scripts": {
+    "dev": "nodemon",
+    "prod": "pm2 start src/loader.js --name system-restilized-backend"
+  },
   "devDependencies": {
     "nodemon": "^1.19.3"
   },
