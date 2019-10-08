@@ -6,7 +6,7 @@ export default props => (
       <span className='logo-mini'><b>Sys.</b></span>
       <span className='logo-lg'>
         <i className='fa fa-money'> </i>
-         <b>System</b>
+         <b>System</b> v2.
       </span>
     </a>
     <nav className='navbar navbar-static-top'>
