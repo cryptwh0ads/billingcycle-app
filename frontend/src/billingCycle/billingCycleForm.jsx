@@ -8,7 +8,7 @@ import ItemList from './itemList'
 
 class BillingCycleForm extends Component {
   render() {
-    const { handleSubmit, readOnly, credits } = this.props
+    const { handleSubmit, readOnly, credits, debits } = this.props
     // console.log(handleSubmit)
     return (
       <div>
@@ -18,6 +18,7 @@ class BillingCycleForm extends Component {
             <Field name='month' component={LabelAndInput} label='Mes' cols='12 4' placeholder='Informe o mes' readOnly={readOnly} />
             <Field name='year' component={LabelAndInput} label='Ano' cols='12 4' placeholder='Informe o ano' readOnly={readOnly} />
             <ItemList cols='12 6' list={credits} readOnly={readOnly} field='credits' legend='Creditos' />
+            <ItemList cols='12 6' list={debits} readOnly={readOnly} field='debits' legend='Debitos' showStatus={true} />
           </div>
           <div className='box-footer'>
             <button type='submit' className={`btn btn-${this.props.btnClass}`}>{this.props.btnLabel}</button>
@@ -33,7 +34,8 @@ BillingCycleForm = reduxForm({form: 'billingCycleForm', destroyOnUnmount: false}
 const selector = formValueSelector('billingCycleForm')
 
 const mapStateToProps = state => ({
-  credits: selector(state, 'credits')
+  credits: selector(state, 'credits'),
+  debits: selector(state, 'debits')
 });
 const mapDispatchToProps = dispatch =>
   bindActionCreators({init}, dispatch);

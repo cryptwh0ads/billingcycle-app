@@ -4,7 +4,7 @@ import { reset as resetForm, initialize } from 'redux-form'
 import { showTabs, selectTab } from '../common/tab/tabActions'
 
 const BASE_URL = 'http://localhost:3001/api'
-const INITIAL_VALUES = {credits: [{}]}
+const INITIAL_VALUES = {credits: [{}], debits: [{}]}
 
 export function init() {
   return [
